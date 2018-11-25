@@ -25,4 +25,5 @@ Route::group(["prefix" => "clientes"], function () {
   Route::post("/gravar", "ClienteController@gravar");
   Route::get("/{idcliente}/editar", "ClienteController@editar");
   Route::post("/atualizar", "ClienteController@atualizar");
+  Route::get("/{idcliente}/excluir", "ClienteController@excluir");
 });

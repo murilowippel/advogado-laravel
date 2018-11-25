@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+  .bt-acao{
+    margin-left: 15px;
+  }
+</style>
 <table class="table"> 
  <thead>
     <tr>
@@ -18,7 +23,9 @@
       <td>{{$cliente->cpf}}</td>
       <td>{{$cliente->telefone}}</td>
       <td>{{$cliente->email}}</td>
-      <td><a href="{{ url("/clientes/$cliente->id/editar") }}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></a></td>
+      <td><a href="{{ url("/clientes/$cliente->id/editar") }}" class="btn btn-primary bt-acao"><i class="fas fa-pencil-alt"></i></a>
+        <a href="{{ url("/clientes/$cliente->id/excluir") }}" class="btn btn-danger bt-acao"><i class="fas fa-trash-alt"></i></a>
+      </td>
     </tr>
     @endforeach
   </tbody>

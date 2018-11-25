@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller {
 
   private $cliente;
-  
+
   public function __construct() {
     $this->cliente = new Cliente();
   }
-  
+
   public function index() {
     $clientes = Cliente::all();
     return view("clientes.index", [
@@ -28,18 +28,24 @@ class ClienteController extends Controller {
     $cliente = $this->cliente->find($idcliente);
     return view("clientes.editar", [
         'cliente' => $cliente
-    ]); 
+    ]);
   }
 
   public function gravar(Request $request) {
     Cliente::create($request->all());
     return redirect("/clientes")->with("message", "Cliente gravado com sucesso!");
   }
-  
+
   public function atualizar(Request $request) {
     $cliente = $this->cliente->find($request->id);
     $cliente->update($request->all());
     return redirect("/clientes");
+  }
+
+  public function excluir($idcliente) {
+    $cliente = $this->cliente->find($idcliente);
+    $cliente->delete();
+    return redirect(url('clientes'))->with('success', 'Excluído!');
   }
 
 }
