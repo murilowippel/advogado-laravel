@@ -15,4 +15,6 @@ class Cliente extends Model {
   ];
   protected $table = 'cliente';
 
+  
+  
 }

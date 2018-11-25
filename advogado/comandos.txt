@@ -1,0 +1,11 @@
+php artisan make:model Cliente
+php artisan make:model TipoProcesso
+php artisan make:model Processo
+
+php artisan make:migration cliente_cria --create cliente
+php artisan make:migration tipoprocesso_cria --create tipoprocesso
+php artisan make:migration processo_cria --create processo
+
+php artisan migrate
+
+php artisan make:controller ClienteController

@@ -15,5 +15,13 @@ class Processo extends Model {
       'idcliente'
   ];
   protected $table = 'processo';
+  
+  public function cliente(){
+    return $this->belongsTo(Cliente::class, "idcliente");
+  }
+  
+  public function tiporocesso(){
+    return $this->belongsTo(TipoProcesso::class, "idtipoprocesso");
+  }
 
 }
