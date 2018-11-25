@@ -13,35 +13,33 @@
 
 Route::get('/', function () {
   return view('/home');
-});
+})->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::group(["prefix" => "clientes"], function () {
-  Route::get("/", "ClienteController@index");
-  Route::get("/novo", "ClienteController@novo");
-  Route::post("/gravar", "ClienteController@gravar");
-  Route::get("/{idcliente}/editar", "ClienteController@editar");
-  Route::post("/atualizar", "ClienteController@atualizar");
-  Route::get("/{idcliente}/excluir", "ClienteController@excluir");
+  Route::get("/", "ClienteController@index")->middleware('auth');
+  Route::get("/novo", "ClienteController@novo")->middleware('auth');
+  Route::post("/gravar", "ClienteController@gravar")->middleware('auth');
+  Route::get("/{idcliente}/editar", "ClienteController@editar")->middleware('auth');
+  Route::post("/atualizar", "ClienteController@atualizar")->middleware('auth');
+  Route::get("/{idcliente}/excluir", "ClienteController@excluir")->middleware('auth');
 });
 
 Route::group(["prefix" => "tipoprocessos"], function () {
-  Route::get("/", "TipoProcessoController@index");
-  Route::get("/novo", "TipoProcessoController@novo");
-  Route::post("/gravar", "TipoProcessoController@gravar");
-  Route::get("/{idtipoprocesso}/editar", "TipoProcessoController@editar");
-  Route::post("/atualizar", "TipoProcessoController@atualizar");
-  Route::get("/{idtipoprocesso}/excluir", "TipoProcessoController@excluir");
+  Route::get("/", "TipoProcessoController@index")->middleware('auth');
+  Route::get("/novo", "TipoProcessoController@novo")->middleware('auth');
+  Route::post("/gravar", "TipoProcessoController@gravar")->middleware('auth');
+  Route::get("/{idtipoprocesso}/editar", "TipoProcessoController@editar")->middleware('auth');
+  Route::post("/atualizar", "TipoProcessoController@atualizar")->middleware('auth');
+  Route::get("/{idtipoprocesso}/excluir", "TipoProcessoController@excluir")->middleware('auth');
 });
 
 Route::group(["prefix" => "processos"], function () {
-  Route::get("/", "ProcessoController@index");
-  Route::get("/novo", "ProcessoController@novo");
-  Route::post("/gravar", "ProcessoController@gravar");
-  Route::get("/{idprocesso}/editar", "ProcessoController@editar");
-  Route::post("/atualizar", "ProcessoController@atualizar");
-  Route::get("/{idprocesso}/excluir", "ProcessoController@excluir");
+  Route::get("/", "ProcessoController@index")->middleware('auth');
+  Route::get("/novo", "ProcessoController@novo")->middleware('auth');
+  Route::post("/gravar", "ProcessoController@gravar")->middleware('auth');
+  Route::get("/{idprocesso}/editar", "ProcessoController@editar")->middleware('auth');
+  Route::post("/atualizar", "ProcessoController@atualizar")->middleware('auth');
+  Route::get("/{idprocesso}/excluir", "ProcessoController@excluir")->middleware('auth');
 });
