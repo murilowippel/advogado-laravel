@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>SisAdv - Sistema para Escritório de Advocacia</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -42,6 +42,15 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ url('clientes/novo') }}">Novo</a>
                   <a class="dropdown-item" href="{{ url('clientes') }}">Listar</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Categorias de Processo
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ url('tipoprocessos/novo') }}">Novo</a>
+                  <a class="dropdown-item" href="{{ url('tipoprocessos') }}">Listar</a>
                 </div>
               </li>
             </ul>

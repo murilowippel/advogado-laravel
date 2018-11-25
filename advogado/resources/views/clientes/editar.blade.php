@@ -18,16 +18,16 @@
       </span>
       @endif
     </div>
-    <div class="from-group col-md-4 {{ $errors->has('cpf') ? 'has-error' : '' }}">
+    <div class="from-group col-md-6 {{ $errors->has('cpf') ? 'has-error' : '' }}">
       <label class="control-label">CPF</label>
-      <input name="cpf" value="{{ $cliente->cpf }}" class="form-control" placeholder="DDD">
+      <input name="cpf" value="{{ $cliente->cpf }}" class="form-control" placeholder="CPF">
       @if($errors->has('cpf'))
       <span class="help-block">
         {{ $errors->first('cpf') }}
       </span>
       @endif
     </div>
-    <div class="from-group col-md-8 {{ $errors->has('telefone') ? 'has-error' : '' }}">
+    <div class="from-group col-md-6 {{ $errors->has('telefone') ? 'has-error' : '' }}">
       <label class="control-label">Telefone</label>
       <input name="telefone" value="{{ $cliente->telefone }}" class="form-control" placeholder="Telefone">
       @if($errors->has('telefone'))
@@ -36,7 +36,7 @@
       </span>
       @endif
     </div>
-    <div class="from-group col-md-8 {{ $errors->has('email') ? 'has-error' : '' }}">
+    <div class="from-group col-md-12 {{ $errors->has('email') ? 'has-error' : '' }}">
       <label class="control-label">E-mail</label>
       <input name="email" value="{{ $cliente->email }}" class="form-control" placeholder="E-mail">
       @if($errors->has('email'))

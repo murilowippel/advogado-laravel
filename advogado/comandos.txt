@@ -9,3 +9,4 @@ php artisan make:migration processo_cria --create processo
 php artisan migrate
 
 php artisan make:controller ClienteController
+php artisan make:controller TipoProcessoController

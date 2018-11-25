@@ -27,3 +27,12 @@ Route::group(["prefix" => "clientes"], function () {
   Route::post("/atualizar", "ClienteController@atualizar");
   Route::get("/{idcliente}/excluir", "ClienteController@excluir");
 });
+
+Route::group(["prefix" => "tipoprocessos"], function () {
+  Route::get("/", "TipoProcessoController@index");
+  Route::get("/novo", "TipoProcessoController@novo");
+  Route::post("/gravar", "TipoProcessoController@gravar");
+  Route::get("/{idtipoprocesso}/editar", "TipoProcessoController@editar");
+  Route::post("/atualizar", "TipoProcessoController@atualizar");
+  Route::get("/{idtipoprocesso}/excluir", "TipoProcessoController@excluir");
+});
