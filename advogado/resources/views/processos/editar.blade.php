@@ -4,6 +4,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <div class="col-md-12">
+  <br>
   <h3>Cadastro de Processos</h3>
 </div>
 
@@ -12,6 +13,7 @@
     {{ csrf_field() }}
     <input type="hidden" name="id" value="{{ $processo->id }}" />
     <div class="from-group col-md-12 {{ $errors->has('titulo') ? 'has-error' : '' }}">
+      <br>
       <label class="control-label">Título</label>
       <input name="titulo" value="{{ $processo->titulo }}" class="form-control" placeholder="Título">
       @if($errors->has('titulo'))
@@ -21,7 +23,8 @@
       @endif
     </div>
 
-    <div class="from-group col-md-12 {{ $errors->has('datacriacao') ? 'has-error' : '' }}">
+    <div class="from-group col-md-4 {{ $errors->has('datacriacao') ? 'has-error' : '' }}">
+      <br>
       <label class="control-label">Data de Criação</label>
       <input name="datacriacao" id="datacriacao" value="{{ $processo->datacriacao }}" class="form-control" placeholder="Data de Criação">
       @if($errors->has('datacriacao'))
@@ -31,7 +34,8 @@
       @endif
     </div>
 
-    <div class="from-group col-md-12 {{ $errors->has('valorcobrado') ? 'has-error' : '' }}">
+    <div class="from-group col-md-4 {{ $errors->has('valorcobrado') ? 'has-error' : '' }}">
+      <br>
       <label class="control-label">Valor Cobrado</label>
       <input name="valorcobrado" id="valorcobrado" value="{{ $processo->valorcobrado }}" class="form-control" placeholder="Valor Cobrado">
       @if($errors->has('valorcobrado'))
@@ -72,7 +76,9 @@
         @endforeach
       </select>
     </div>
-
+    
+    <br>
+    
     <div class="col-md-12">
       <button style="margin-top: 5px; float: right" class="btn btn-primary">Gravar</button>
     </div>

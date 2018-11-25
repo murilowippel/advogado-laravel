@@ -24,7 +24,7 @@
       <td style="text-align: center;">{{$processo->id}}</td>
       <td>{{$processo->titulo}}</td>
       <td>{{$processo->datacriacao}}</td>
-      <td>{{$processo->valorcobrado}}</td>
+      <td>{{number_format($processo->valorcobrado, 2, ",", ".")}}</td>
       <?php
         foreach($tipoprocessos as $tipoprocesso){
           if($tipoprocesso->id == $processo->idtipoprocesso){ ?>

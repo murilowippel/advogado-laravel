@@ -22,7 +22,7 @@
       @endif
     </div>
 
-    <div class="from-group col-md-12 {{ $errors->has('datacriacao') ? 'has-error' : '' }}">
+    <div class="from-group col-md-4 {{ $errors->has('datacriacao') ? 'has-error' : '' }}">
       <br>
       <label class="control-label">Data de Criação</label>
       <input name="datacriacao" id="datacriacao" value="{{ old('datacriacao') }}" class="form-control" placeholder="Data de Criação">
@@ -33,7 +33,7 @@
       @endif
     </div>
 
-    <div class="from-group col-md-12 {{ $errors->has('valorcobrado') ? 'has-error' : '' }}">
+    <div class="from-group col-md-4 {{ $errors->has('valorcobrado') ? 'has-error' : '' }}">
       <br>
       <label class="control-label">Valor Cobrado</label>
       <input name="valorcobrado" id="valorcobrado" value="{{ old('valorcobrado') }}" class="form-control" placeholder="Valor Cobrado">

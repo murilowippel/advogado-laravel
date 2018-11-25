@@ -4,6 +4,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <div class="col-md-12">
+  <br>
   <h3>Cadastro de Cliente</h3>
 </div>
 
@@ -11,6 +12,7 @@
   <form class="col-md-12" action="{{ url('/clientes/gravar') }}" method="POST">
     {{ csrf_field() }}
     <div class="from-group col-md-12 {{ $errors->has('nome') ? 'has-error' : '' }}">
+      <br>
       <label class="control-label">Nome</label>
       <input name="nome" value="{{ old('nome') }}" class="form-control" placeholder="Nome">
       @if($errors->has('nome'))
@@ -20,6 +22,7 @@
       @endif
     </div>
     <div class="from-group col-md-6 {{ $errors->has('cpf') ? 'has-error' : '' }}">
+      <br>
       <label class="control-label">CPF</label>
       <input name="cpf" id="cpf" value="{{ old('cpf') }}" class="form-control" placeholder="CPF">
       @if($errors->has('cpf'))
@@ -29,6 +32,7 @@
       @endif
     </div>
     <div class="from-group col-md-6 {{ $errors->has('telefone') ? 'has-error' : '' }}">
+      <br>
       <label class="control-label">Telefone</label>
       <input name="telefone" id="telefone" value="{{ old('telefone') }}" class="form-control" placeholder="Telefone">
       @if($errors->has('telefone'))
@@ -38,6 +42,7 @@
       @endif
     </div>
     <div class="from-group col-md-12 {{ $errors->has('email') ? 'has-error' : '' }}">
+      <br>
       <label class="control-label">E-mail</label>
       <input name="email" value="{{ old('email') }}" class="form-control" placeholder="E-mail">
       @if($errors->has('email'))
@@ -46,6 +51,9 @@
       </span>
       @endif
     </div>
+    
+    <br>
+    
     <div class="col-md-12">
       <button style="margin-top: 5px; float: right" class="btn btn-primary">Gravar</button>
     </div>
