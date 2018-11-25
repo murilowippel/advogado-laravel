@@ -23,7 +23,7 @@
   </head>
   <body>
     <div id="app">
-      <?php if (!Auth::guest()) { ?>
+      
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
           <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -33,38 +33,40 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
               <span class="navbar-toggler-icon"></span>
             </button>
-
+            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <!-- Left Side Of Navbar -->
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Clientes
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ url('clientes/novo') }}">Novo</a>
-                    <a class="dropdown-item" href="{{ url('clientes') }}">Listar</a>
-                  </div>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Categorias de Processo
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ url('tipoprocessos/novo') }}">Novo</a>
-                    <a class="dropdown-item" href="{{ url('tipoprocessos') }}">Listar</a>
-                  </div>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Processos
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ url('processos/novo') }}">Novo</a>
-                    <a class="dropdown-item" href="{{ url('processos') }}">Listar</a>
-                  </div>
-                </li>
-              </ul>
+              <?php if (!Auth::guest()) { ?>
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Clientes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ url('clientes/novo') }}">Novo</a>
+                      <a class="dropdown-item" href="{{ url('clientes') }}">Listar</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Categorias de Processo
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ url('tipoprocessos/novo') }}">Novo</a>
+                      <a class="dropdown-item" href="{{ url('tipoprocessos') }}">Listar</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Processos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ url('processos/novo') }}">Novo</a>
+                      <a class="dropdown-item" href="{{ url('processos') }}">Listar</a>
+                    </div>
+                  </li>
+                </ul>
+              <?php } ?>
 
               <!-- Right Side Of Navbar -->
               <ul class="navbar-nav ml-auto">
@@ -101,7 +103,6 @@
             </div>
           </div>
         </nav>
-      <?php } ?>
 
       <div class="container">
         @yield('content')
