@@ -11,12 +11,13 @@
   |
  */
 
+Auth::routes();
+
 Route::get('/', function () {
   return view('/home');
 })->middleware('auth');
 
-Auth::routes();
-
+//Rotas para a rotina de Clientes
 Route::group(["prefix" => "clientes"], function () {
   Route::get("/", "ClienteController@index")->middleware('auth');
   Route::get("/novo", "ClienteController@novo")->middleware('auth');
@@ -26,6 +27,7 @@ Route::group(["prefix" => "clientes"], function () {
   Route::get("/{idcliente}/excluir", "ClienteController@excluir")->middleware('auth');
 });
 
+//Rotas para a rotina de Categorias de Processo
 Route::group(["prefix" => "tipoprocessos"], function () {
   Route::get("/", "TipoProcessoController@index")->middleware('auth');
   Route::get("/novo", "TipoProcessoController@novo")->middleware('auth');
@@ -35,6 +37,7 @@ Route::group(["prefix" => "tipoprocessos"], function () {
   Route::get("/{idtipoprocesso}/excluir", "TipoProcessoController@excluir")->middleware('auth');
 });
 
+//Rotas para a rotina de processos
 Route::group(["prefix" => "processos"], function () {
   Route::get("/", "ProcessoController@index")->middleware('auth');
   Route::get("/novo", "ProcessoController@novo")->middleware('auth');
