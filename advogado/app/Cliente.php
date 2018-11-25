@@ -14,7 +14,5 @@ class Cliente extends Model {
       'email'
   ];
   protected $table = 'cliente';
-
-  
   
 }

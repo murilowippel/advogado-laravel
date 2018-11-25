@@ -10,3 +10,4 @@ php artisan migrate
 
 php artisan make:controller ClienteController
 php artisan make:controller TipoProcessoController
+php artisan make:controller ProcessoController

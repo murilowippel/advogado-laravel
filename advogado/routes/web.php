@@ -36,3 +36,12 @@ Route::group(["prefix" => "tipoprocessos"], function () {
   Route::post("/atualizar", "TipoProcessoController@atualizar");
   Route::get("/{idtipoprocesso}/excluir", "TipoProcessoController@excluir");
 });
+
+Route::group(["prefix" => "processos"], function () {
+  Route::get("/", "ProcessoController@index");
+  Route::get("/novo", "ProcessoController@novo");
+  Route::post("/gravar", "ProcessoController@gravar");
+  Route::get("/{idprocesso}/editar", "ProcessoController@editar");
+  Route::post("/atualizar", "ProcessoController@atualizar");
+  Route::get("/{idprocesso}/excluir", "ProcessoController@excluir");
+});

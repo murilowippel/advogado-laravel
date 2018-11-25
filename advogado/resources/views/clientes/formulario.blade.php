@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <div class="col-md-12">
   <h3>Cadastro de Cliente</h3>
 </div>
@@ -19,7 +21,7 @@
     </div>
     <div class="from-group col-md-6 {{ $errors->has('cpf') ? 'has-error' : '' }}">
       <label class="control-label">CPF</label>
-      <input name="cpf" value="{{ old('cpf') }}" class="form-control" placeholder="CPF">
+      <input name="cpf" id="cpf" value="{{ old('cpf') }}" class="form-control" placeholder="CPF">
       @if($errors->has('cpf'))
       <span class="help-block">
         {{ $errors->first('cpf') }}
@@ -28,7 +30,7 @@
     </div>
     <div class="from-group col-md-6 {{ $errors->has('telefone') ? 'has-error' : '' }}">
       <label class="control-label">Telefone</label>
-      <input name="telefone" value="{{ old('telefone') }}" class="form-control" placeholder="Telefone">
+      <input name="telefone" id="telefone" value="{{ old('telefone') }}" class="form-control" placeholder="Telefone">
       @if($errors->has('telefone'))
       <span class="help-block">
         {{ $errors->first('telefone') }}
@@ -49,4 +51,10 @@
     </div>
   </form>
 </div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#cpf').mask('000.000.000-00', {reverse: true});
+    $('#telefone').mask('(00) 0000-0000');
+  });
+</script>
 @endsection
